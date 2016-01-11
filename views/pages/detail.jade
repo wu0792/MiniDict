@@ -20,10 +20,10 @@ block content
       span 同义词：
         each same in item.sames
           a(href='/d/#{same.id}') #{same.name}
-          &nbsp;&nbsp;
+          |&nbsp;&nbsp;
       //if(item.opposites.length>0)
       br
       span 反义词：
         each opp in item.opposites
           a(href='/d/#{opp.id}') #{opp.name}
-          &nbsp;&nbsp;
+          |&nbsp;&nbsp;
