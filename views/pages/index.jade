@@ -1,3 +1,25 @@
 extends ../layout.jade
+  
 block content
-  div index页面
+  div.container-fluid
+    div.row
+      div.input-group
+        input.form-control#txt-search(type='text',placeholder='想查什么?')
+        span.input-group-btn            
+            button.btn.btn-default#btn-search(type='button') 查找
+    div.row
+      div.list-group.invisible#div-search-result
+        a(href='/d/1').list-group-item
+          h4.list-group-item-heading  阴雨绵绵
+          p.list-group-item-text   detail....
+        a(href='/d/1').list-group-item
+          h4.list-group-item-heading  阴雨绵绵
+          p.list-group-item-text   detail....
+        a(href='/d/1').list-group-item
+          h4.list-group-item-heading  阴雨绵绵
+          p.list-group-item-text   detail....
+        a(href='/d/1').list-group-item
+          h4.list-group-item-heading  阴雨绵绵
+          p.list-group-item-text   detail....
+
+  script(src="./js/index.js")

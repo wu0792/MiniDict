@@ -1,4 +1,29 @@
 extends ../layout.jade
 block content
-  div detail页面
-  div id:#{id}
+  div.container-fluid
+    .row
+      .col-md-12
+        h3 #{item.name}
+  .panel.panel-default
+    .panel-heading 解释
+    .panel-body #{item.desc}
+  .panel.panel-default
+    .panel-heading 示例
+    .panel-body
+      each exam in item.exams
+        div #{exam.content}
+        hr  
+  .panel.panel-default
+    .panel-heading 同/反义词
+    .panel-body
+      //if(item.sames.length>0)
+      span 同义词：
+        each same in item.sames
+          a(href='/d/#{same.id}') #{same.name}
+          &nbsp;&nbsp;
+      //if(item.opposites.length>0)
+      br
+      span 反义词：
+        each opp in item.opposites
+          a(href='/d/#{opp.id}') #{opp.name}
+          &nbsp;&nbsp;
